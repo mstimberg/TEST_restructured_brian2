@@ -5,7 +5,7 @@ Brian preferences.
 
 from numpy import float32, float64, int32
 
-from _brian2.core.preferences import BrianPreference, prefs
+from brian2lib.core.preferences import BrianPreference, prefs
 
 __all__ = []
 

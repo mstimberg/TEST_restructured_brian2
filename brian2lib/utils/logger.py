@@ -23,8 +23,8 @@ except ImportError:
     scipy = None
 import sympy
 
-import _brian2
-from _brian2.core.preferences import prefs, BrianPreference
+import brian2lib
+from brian2lib.core.preferences import prefs, BrianPreference
 
 
 __all__ = ['get_logger', 'BrianLogger', 'std_silent']
@@ -593,7 +593,7 @@ class BrianLogger(object):
                    (BrianLogger.tmp_log, BrianLogger.tmp_script))
         logger.log(DIAGNOSTIC, 'Python interpreter: %s' % sys.executable)
         logger.log(DIAGNOSTIC, 'Platform: %s' % sys.platform)
-        version_infos = {'brian': _brian2.__version__,
+        version_infos = {'brian': brian2lib.__version__,
                          'numpy': numpy.__version__,
                          'scipy': scipy.__version__ if scipy else 'not installed',
                          'sympy': sympy.__version__,

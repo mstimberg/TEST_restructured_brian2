@@ -1,5 +1,5 @@
 from numpy import *
-from _brian2 import *
+from brian2lib import *
 
-from _brian2.utils.logger import BrianLogger
+from brian2lib.utils.logger import BrianLogger
 BrianLogger.initialize()

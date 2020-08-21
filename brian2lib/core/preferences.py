@@ -8,8 +8,8 @@ import os
 from collections.abc import MutableMapping
 from io import BytesIO
 
-from _brian2.utils.stringtools import deindent, indent
-from _brian2.units.fundamentalunits import have_same_dimensions, Quantity
+from brian2lib.utils.stringtools import deindent, indent
+from brian2lib.units.fundamentalunits import have_same_dimensions, Quantity
 
 __all__ = ['PreferenceError', 'BrianPreference', 'prefs', 'brian_prefs']
 
@@ -149,8 +149,8 @@ class BrianGlobalPreferences(MutableMapping):
         self.eval_namespace = {}
         exec(deindent('''
             from numpy import *
-            from _brian2.units import *            
-            from _brian2.units.stdunits import *
+            from brian2lib.units import *            
+            from brian2lib.units.stdunits import *
             '''), self.eval_namespace)
 
     def __getitem__(self, item):
@@ -534,7 +534,7 @@ class BrianGlobalPreferences(MutableMapping):
         key Brian functions.
         '''
         if len(self.prefs_unvalidated):
-            from _brian2.utils.logger import get_logger
+            from brian2lib.utils.logger import get_logger
             logger = get_logger(__name__)
             logger.warn("The following preferences values have been set but "
                         "are not registered preferences:\n%s\nThis is usually "
